@@ -174,3 +174,69 @@ Vector (Clase - Lista sincronizada basada en array)
 Stack (Clase - Pila, construida sobre Vector)
 
 ArrayList (Clase - Lista NO sincronizada basada en array)
+
+## Ejercicio 70
+```
+import java.util.Stack;
+public class DemoPilas
+{
+  public static void main(String[] args)
+  {
+    Stack<Integer> pila = new Stack<>();
+    pila.push(1);
+    pila.push(2);
+    System.out.println(pila);
+    System.out.println(pila.peek());
+    pila.pop();
+  System.out.println(pila);
+  }
+}
+```
+
+Primero se crea un stack llamado pila, después se le añaden los enteros 1 y 2, a continuación se imprime la pila, después, el elemento en la cima de la pila, después saca el elemento en la cima de la pila y vuelve a imprimir la pila.
+
+## Ejercicio 71 
+### Explique qué es una cola y cuáles son sus operaciones típicas.
+
+Una cola es una TAD que representa una colección ordenada en la que los elementos se añaden al final y se extraen al principio (FIFO).
+Las operaciones típicas que se hacen en una cola son:
+  Añadir elemento al final de la cola
+  Extraer elemento al principio de la cola
+  Ver el elemento al principio de la cola sin extraer
+  Indicar si la cola está vacía
+
+  ## Ejercicio 72
+  ### Indique tipos de aplicaciones en que se utilicen colas.
+  Las colas se utilizan en gestión de tareas y procesos, utilizan colas para gestionarlos.
+  También se utiliza en el procesamiento de eventos en GUI y sistemas basados en eventos.
+  También para comunicación entre procesos o hilos, pueden actuar como buffer para la comunicación entre diferentes partes de un programa o programaas diferentes.
+  Sirven para explorar los nodos de un árbol por nivel.
+  Por último, en simulaciones de sistemas de colas de espera.
+
+  ## Ejercicio 73
+  ### Examine el código de la clase ArrayDequeue.java y explique cómo aplica la aritmética modular.
+  Con la aritmética modular se gestiona de forma circular los índices del array.
+  Esta implementación permite no desplazar los elementos en memoria cada vez que se elimina un elemento del frente o se añade al final, lo que hace es mover el índice por el que empieza y por el que termina la cola dentro del array, de forma circular.
+  La aritmética modular se usa porque haciendo el módulo sobre la longitud total del array los índices pueden dar la vuelta una vez llegan al final de la cola, haciendo el array circular.
+
+  ## Ejercicio 74
+  ### Ejecute y explique el siguiente código, y compare su comportamiento con el programa del ejercicio 69:
+  ```
+import java.util.ArrayDeque;
+public class DemoColas
+{
+  public static void main(String[] args)
+  {
+    ArrayDeque<Integer> cola = new ArrayDeque<>();
+    cola.add(1);
+    cola.add(2);
+    System.out.println(cola);
+    System.out.println(cola.peek());
+    System.out.println(cola.poll());
+    System.out.println(cola);
+  }
+}
+```
+Este código ejecuta algo similar que el ejercicio 69 pero en una cola en vez de en un stack.
+La diferencia principal es que cuando añades elementos, se añaden al final en vez de al principio, lo que cambia el resultado de peek y poll (su equivalente es pop), siendo el primer elemento en haber sido indoducido el resultado.
+A la hora de imprimir, se imprimirán en orden de entrada, en lugar de orden inverso.
