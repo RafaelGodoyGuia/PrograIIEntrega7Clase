@@ -1,4 +1,7 @@
 # PrograIIEntrega7Clase
+Entrega realizada por:
+- Rafael Godoy
+- Alejandro Santamaría
 
 ## Ejercicio 61
 
